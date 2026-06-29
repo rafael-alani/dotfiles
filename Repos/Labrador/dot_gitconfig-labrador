@@ -1,0 +1,7 @@
+[user]
+	name = Rafael Alani
+	email = r.a.alani-1@student.tudelft.nl
+
+[core]
+	sshCommand = "ssh -i ~/.ssh/id_ed25519-labrador"
+	excludesfile = ~/Repos/Labrador/.gitignore-labrador

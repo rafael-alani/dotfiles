@@ -1,0 +1,16 @@
+[user]
+	name = rafael-alani
+  email = rafael.alani@hotmail.com
+
+[includeIf "gitdir/i:~/Repos/Labrador/"]
+	path = ~/Repos/Labrador/.gitconfig-labrador
+# bolocks, sometimes it do be github we use
+[includeIf "gitdir/i:~/Repos/DSAIT/"]
+  path = ~/Repos/DSAIT/.gitconfig-dsait
+
+# cleaner way
+[includeIf "hasconfig:remote.*.url:git@gitlab.ewi.tudelft.nl:*/**"]
+    path = ~/Repos/Labrador/.gitconfig-labrador
+  
+[core]
+	pager = less
