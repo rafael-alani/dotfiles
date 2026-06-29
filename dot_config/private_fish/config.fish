@@ -1,0 +1,27 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /opt/homebrew/anaconda3/bin/conda
+    eval /opt/homebrew/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/opt/homebrew/anaconda3/etc/fish/conf.d/conda.fish"
+        . "/opt/homebrew/anaconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/opt/homebrew/anaconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
+starship init fish | source
+
+# Added by Antigravity
+fish_add_path /Users/rafael/.antigravity/antigravity/bin
+function on_pwd_change --on-variable PWD
+    printf "\e]7;file://%s%s\a" $HOSTNAME (string escape --style=url $PWD)
+end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
