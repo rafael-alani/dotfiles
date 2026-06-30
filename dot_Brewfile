@@ -3,18 +3,12 @@ tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
 tap "nikitabobko/tap"
 # Any-to-PostScript filter
 brew "a2ps"
-# TIFF library and utilities
-brew "libtiff"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
-# Next-gen compiler infrastructure
-brew "llvm"
 # LLVM's OpenMP runtime library
 brew "libomp"
 # Text processing scripting language
 brew "awk"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.13"
+brew "python@3.14"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Vector graphics library with cross-device output support
@@ -29,6 +23,8 @@ brew "cmake"
 brew "docker"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
+# TIFF library and utilities
+brew "libtiff"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Play, record, convert, and stream select audio and video codecs
@@ -41,10 +37,6 @@ brew "fish"
 brew "fzf"
 # GNU compiler collection
 brew "gcc@12"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
-# Geospatial Data Abstraction Library
-brew "gdal"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -53,10 +45,14 @@ brew "git"
 brew "gnu-go"
 # Command-driven, interactive function plotting
 brew "gnuplot"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Julia installer and version multiplexer
 brew "juliaup"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Utility for directing compilation
 brew "make"
 # Open-source, cross-platform JavaScript runtime environment
@@ -69,6 +65,8 @@ brew "octave"
 brew "py3cairo"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
@@ -90,15 +88,13 @@ brew "tree"
 # Next generation frontend tooling. It's fast!
 brew "vite"
 # AeroSpace is an i3-like tiling window manager for macOS
-cask "nikitabobko/tap/aerospace"
+cask "nikitabobko/tap/aerospace", trusted: true
 # Distribution of the Python and R programming languages for scientific computing
 cask "anaconda"
 # Agent orchestration platform
 cask "antigravity"
 # Application uninstaller
 cask "appcleaner"
-# Display management tool
-cask "betterdisplay"
 # Web browser focusing on privacy
 cask "brave-browser"
 # OpenAI's coding agent that runs in your terminal
@@ -145,16 +141,12 @@ cask "signal"
 cask "spotify"
 # System monitor for the menu bar
 cask "stats"
-# Text editor for code, markup and prose
-cask "sublime-text"
 # Menu bar customization tool
 cask "swiftbar"
 # Real time file synchronisation software
 cask "syncthing-app"
 # Customizable timing of breaks
 cask "time-out"
-# Unicode keyboard layout editor
-cask "ukelele"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
