@@ -1,8 +1,10 @@
+README.md
+.config/raycast
+
 {{- if eq .profile "headless" }}
 .Brewfile
 .config/aerospace
 .config/kitty
 .config/sketchybar
 .config/karabiner
-.config/raycast
 {{- end }}

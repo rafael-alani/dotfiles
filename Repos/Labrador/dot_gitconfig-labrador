@@ -1,7 +1,7 @@
 [user]
-	name = Rafael Alani
-	email = r.a.alani-1@student.tudelft.nl
+    name = Rafael Alani
+    email = r.a.alani-1@student.tudelft.nl
 
 [core]
-	sshCommand = "ssh -i ~/.ssh/gitlab-uni"
-	excludesfile = ~/Repos/Labrador/.gitignore-labrador
+    sshCommand = ssh -i /Users/rafael/.ssh/gitlab-uni -o IdentitiesOnly=yes
+    excludesfile = /Users/rafael/Repos/Labrador/.gitignore-labrador

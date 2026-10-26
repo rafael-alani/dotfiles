@@ -4,6 +4,10 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 vim.opt.termguicolors = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+lvim.keys.normal_mode["H"] = ":bprevious<CR>"
+lvim.keys.normal_mode["L"] = ":bnext<CR>"
 
 lvim.plugins = {
   {
@@ -60,6 +64,16 @@ lvim.plugins = {
       })
     end,
   },
+  {
+    "dlyongemallo/diffview-plus.nvim",
+  },
+  {
+    "sindrets/diffview.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+  }
 }
 
 -- fallback theme before auto-dark-mode applies
