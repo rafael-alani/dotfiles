@@ -1,6 +1,8 @@
 tap "databricks/tap"
 tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
+tap "kgarner7/feishin"
 tap "nikitabobko/tap"
+tap "pakerwreah/calendr"
 # Any-to-PostScript filter
 brew "a2ps"
 # LLVM's OpenMP runtime library
@@ -77,8 +79,6 @@ brew "rust"
 brew "sox"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Easiest, most secure way to use WireGuard and 2FA
-brew "tailscale"
 # Simplified and community-driven man pages
 brew "tldr"
 # Terminal multiplexer
@@ -87,6 +87,19 @@ brew "tmux"
 brew "tree"
 # Next generation frontend tooling. It's fast!
 brew "vite"
+# Additional workstation tools
+brew "bob"
+brew "bottom"
+brew "bun"
+brew "colima"
+brew "gdu"
+brew "kew"
+brew "postgresql@18"
+brew "rlwrap"
+brew "tree-sitter-cli"
+brew "unzip"
+brew "uv"
+
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace", trusted: true
 # Distribution of the Python and R programming languages for scientific computing
@@ -107,8 +120,6 @@ cask "discord"
 cask "firefox"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
-# Git client focusing on productivity
-cask "gitkraken"
 # Web browser
 cask "google-chrome"
 # Graphically shows disk usage within a file system
@@ -159,6 +170,23 @@ cask "whatsapp"
 cask "zoom"
 # Collect, organise, cite, and share research sources
 cask "zotero"
+# Additional workstation applications
+cask "anki"
+cask "blender"
+cask "calendr"
+cask "claude"
+cask "cmux"
+cask "codex-app"
+cask "karabiner-elements"
+cask "krita"
+cask "linear"
+cask "motu-m-series"
+cask "protonvpn"
+cask "raycast"
+cask "squirrel-app"
+cask "tailscale-app"
+cask "kgarner7/feishin/feishin", trusted: true
+
 vscode "deerawan.vscode-dash"
 vscode "google.colab"
 vscode "james-yu.latex-workshop"
@@ -183,3 +211,4 @@ vscode "tomoki1207.pdf"
 cargo "bob-nvim"
 cargo "fd-find"
 npm "neovim"
+npm "tree-sitter-cli"

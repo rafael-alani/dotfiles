@@ -1,0 +1,29 @@
+{{- $lan := get . "sshLanPattern" | default "" -}}
+{{- $workerAlias := get . "sshWorkerAlias" | default "" -}}
+{{- $workerHostname := get . "sshWorkerHostname" | default "" -}}
+{{- $workerUser := get . "sshWorkerUser" | default "" -}}
+IgnoreUnknown UseKeychain
+Include "{{ .chezmoi.homeDir }}/.colima/ssh_config"
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentitiesOnly yes
+{{ if $lan }}
+Host {{ $lan }}
+    IdentityFile ~/.ssh/homelab
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    UseKeychain yes
+
+{{ end }}
+{{ if and $workerAlias $workerHostname $workerUser }}
+Host {{ $workerAlias }}
+    HostName {{ $workerHostname }}
+    User {{ $workerUser }}
+    IdentityFile ~/.ssh/homelab
+    IdentitiesOnly yes
+{{ end -}}

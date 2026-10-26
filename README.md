@@ -1,4 +1,9 @@
-Kitty quick-access terminal with Karabiner
+# Workstation configuration
+
+See [the restore guide](docs/restoring.md) for the Brewfile, selected macOS app settings,
+Rime updates and SSH configuration. Private data and binary exports are managed separately.
+
+## Kitty quick-access terminal with Karabiner
 
 Network shares only appear under /Volumes after macOS mounts them. Macintosh HD is the local system disk; the SMB share should appear separately as /Volumes/Media.
 

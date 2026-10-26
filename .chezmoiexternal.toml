@@ -1,0 +1,18 @@
+{{ if and (eq .chezmoi.os "darwin") (eq .profile "workstation") -}}
+# Follow upstream master; -R forces a refresh before the daily cache expires.
+
+["Library/Rime/terra_pinyin.schema.yaml"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/rime/rime-terra-pinyin/master/terra_pinyin.schema.yaml"
+    refreshPeriod = "24h"
+
+["Library/Rime/terra_pinyin.dict.yaml"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/rime/rime-terra-pinyin/master/terra_pinyin.dict.yaml"
+    refreshPeriod = "24h"
+
+["Library/Rime/terra_pinyin_12345.schema.yaml"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/rime/rime-terra-pinyin/master/terra_pinyin_12345.schema.yaml"
+    refreshPeriod = "24h"
+{{ end -}}

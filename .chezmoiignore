@@ -1,4 +1,5 @@
 README.md
+docs
 .config/raycast
 
 {{- if eq .profile "headless" }}
@@ -7,4 +8,9 @@ README.md
 .config/kitty
 .config/sketchybar
 .config/karabiner
+{{- end }}
+
+{{- if or (ne .chezmoi.os "darwin") (eq .profile "headless") }}
+Library/Rime
+Library/Application Support/Code
 {{- end }}

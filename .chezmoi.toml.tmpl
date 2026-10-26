@@ -1,4 +1,12 @@
 {{- $profile := promptChoiceOnce . "profile" "Machine profile" (list "workstation" "headless") "workstation" -}}
+{{- $sshLanPattern := promptStringOnce . "sshLanPattern" "SSH LAN host pattern (blank to omit)" "" -}}
+{{- $sshWorkerAlias := promptStringOnce . "sshWorkerAlias" "SSH worker alias (blank to omit)" "" -}}
+{{- $sshWorkerHostname := promptStringOnce . "sshWorkerHostname" "SSH worker hostname or IP (blank to omit)" "" -}}
+{{- $sshWorkerUser := promptStringOnce . "sshWorkerUser" "SSH worker username (blank to omit)" "" -}}
 
 [data]
 profile = {{ $profile | quote }}
+sshLanPattern = {{ $sshLanPattern | quote }}
+sshWorkerAlias = {{ $sshWorkerAlias | quote }}
+sshWorkerHostname = {{ $sshWorkerHostname | quote }}
+sshWorkerUser = {{ $sshWorkerUser | quote }}
