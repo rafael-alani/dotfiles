@@ -2,8 +2,9 @@
 
 This repository owns the Brewfile and selected text configuration. Outside
 `.config`, the managed application settings are Rime, VS Code, cmux and Stats,
-plus SSH configuration. Packages use the current available versions. No custom
-tool/runtime installer or version-pinning layer is maintained here.
+plus SSH configuration. Packages use the current available versions. Custom
+tools are reinstalled from their owning repositories; their code and binaries
+are not mirrored here.
 
 Private application data, credentials, binary settings exports and Rime learned
 dictionary snapshots are handled independently. Raycast is installed through the
@@ -58,6 +59,50 @@ installation identity or the generated `build` directory.
 Enable Squirrel in macOS input sources, run **Deploy** from its menu, then check
 numeric tones `12345`, candidate selection `67890` and simplified output. Run
 Deploy again after updating its source files. No snapshot recovery is performed.
+
+## SquirrelVoice pronunciation
+
+The native speech helper lives in the private
+[rafael-alani/squirrel-voice](https://github.com/rafael-alani/squirrel-voice)
+repository. Restore its latest source after Squirrel is installed and the
+`terra_pinyin_12345` schema has been deployed. Authenticate `gh` for access to
+that private repository. Xcode Command Line Tools provide Swift; the Brewfile
+provides Python and Lua, which the tool's checks use.
+
+On a fresh machine, clone it once:
+
+```sh
+gh repo clone rafael-alani/squirrel-voice "$HOME/Repos/squirrel-voice"
+```
+
+Install, or update an existing checkout, with:
+
+```sh
+cd "$HOME/Repos/squirrel-voice"
+git pull --ff-only
+./scripts/test.sh
+./scripts/package.sh
+python3 scripts/install.py --schema terra_pinyin_12345
+```
+
+Its installer owns the separate app, LaunchAgent,
+`~/Library/Rime/lua/squirrel_voice.lua`, and
+`~/Library/Rime/terra_pinyin_12345.custom.yaml`. The installed hook and Lua file
+currently match that source exactly. Keep them together under the tool's
+installer rather than restoring a speech hook without its helper. Chezmoi's
+selected Rime files leave these installer-owned files alone.
+
+No personal voice-preference overrides were saved when this integration was
+recorded. The helper defaults to automatic pronunciation and prefers the
+installed Tingting voice. macOS voice downloads remain outside this repository.
+If those preferences are customized later, only `voiceIdentifier` and
+`automaticSpeech` in the `io.github.rafael-alani.SquirrelVoice` defaults domain
+are candidates for the same selected-key capture used for cmux/Stats.
+
+The speech cache and installer rollback files stay outside dotfiles. After
+restoration, select Squirrel in a normal app, pronounce a highlighted candidate
+with Control–Option–P, then commit Chinese text and confirm automatic speech.
+SquirrelTranslate remains separate and is not installed by this procedure.
 
 ## Capture future preference changes
 

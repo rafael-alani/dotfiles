@@ -94,6 +94,8 @@ brew "bun"
 brew "colima"
 brew "gdu"
 brew "kew"
+# SquirrelVoice Lua integration checks
+brew "lua"
 brew "postgresql@18"
 brew "rlwrap"
 brew "tree-sitter-cli"
